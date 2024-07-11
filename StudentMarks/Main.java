@@ -20,6 +20,14 @@ class Main {
             userNames[i] = myObj.nextLine();  // Read user input and store it in the array
              System.out.println("Enter marks of " +(i + 1)  + " student " + userNames[i]+ ":" );
             marks[i] = myObj.nextLine();  // Read user input and store it in the array
+        String markInput = myObj.nextLine();  // Read user input as String
+                try {
+                    marks[i] = Integer.parseInt(markInput);  // Convert String to int
+                    validInput = true;  // Input is valid, exit the loop
+                } catch (NumberFormatException e) {
+                    System.out.println("This is Not an number,Please enter a valid number.");
+                }
+            }
         }
 
         // Close the Scanner
