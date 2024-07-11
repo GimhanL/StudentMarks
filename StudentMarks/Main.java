@@ -16,13 +16,20 @@ class Main {
 
         // Loop to get 10 usernames
         for (int i = 0; i < 5; i++) {
+            System.out.println("Enter Student Name " + (i + 1) + ":");
+            userNames[i] = myObj.nextLine();  //Storing in a array
              boolean validInput = false;  // Variable to check valid input
             while (!validInput) {
                 System.out.println("Enter marks of " + userNames[i] + ":");
                 String markInput = myObj.nextLine();  // Read user input as String
                 try {
-                    marks[i] = Integer.parseInt(markInput);  // Convert String to int
-                    validInput = true;  // Input is valid, exit the loop
+                   int mark = Integer.parseInt(markInput);  // converting to int
+                     
+                     if (mark >= 0 && mark <= 30) {  marks[i] = mark;
+                        validInput = true;  // Input is valid, exit the loop
+                    } else {
+                        System.out.println("Invalid input. Marks must be between 0 and 30.");
+                    }
                 } catch (NumberFormatException e) {
                     System.out.println("This is not a number. Please enter a valid number.");
                 }
