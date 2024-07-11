@@ -39,15 +39,42 @@ class Main {
         }
         // Close the Scanner
         myObj.close();
+        
         //Displaying the assignment name
         System.out.println("\nAssignment Name : " + assignmentName);
+        
         // Displaying all usernames and marks
         System.out.println("\nStudent Name and marks has been entered:");
+        
         for (int i = 0; i < 5; i++) {
             System.out.println("Student Name " + (i + 1) + ": " + userNames[i]);
              System.out.println("marks " + (i + 1) + ": " + marks[i]);
         }
+        
+        
+        //Getting Highest and lowest mark
+        int maxMark = marks[0];  // Checking the first mark
+        int minMark = marks[0];  
+        
+        // Find the lowest mark  and highest mark using for loop
+        for (int i = 1; i < marks.length; i++) {
+            
+            if (marks[i] < minMark) {  // If the current value is lower than the lowest value
+                minMark = marks[i];    // Update the lowest mark
+            }
+            
+            if (marks[i] > maxMark) { 
+                maxMark = marks[i];    
+            }
+        }
+        
+        // Print the highest and lowest marks
+        System.out.println("\nHighest Mark: " + maxMark);
+        System.out.println("Lowest Mark: " + minMark);
     }
+
+    
+    
 }
 
 
