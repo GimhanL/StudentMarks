@@ -10,9 +10,12 @@ import java.util.Scanner;  // Import the Scanner class
 class Main {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        String[] userNames = new String[10];  // Create an array to store 10 usernames
+        String[] userNames = new String[10];  // Creating an array to store 10 student names
+        String[] assignmentName = new String[10];  // Creating an array to sotre 10 assignment names
         int[] marks = new int[10];  // Create an array to store 10 usernames
 
+        System.out.println("Enter Assignment Name:");
+        String assignmentName = myObj.nextLine();  // Storing assignment name
 
         // Loop to get 10 usernames
         for (int i = 0; i < 5; i++) {
