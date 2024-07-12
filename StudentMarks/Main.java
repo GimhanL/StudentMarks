@@ -71,6 +71,34 @@ class Main {
         // Print the highest and lowest marks
         System.out.println("\nHighest Mark: " + maxMark);
         System.out.println("Lowest Mark: " + minMark);
+        
+        
+            double total = 0;  // Making total to 0
+
+        // Add up all the marks
+        for (int i = 0; i < marks.length; i++) {
+            total += marks[i];  // Add each mark to the total variable
+        }
+
+       double mean = total / marks.length;  // Getting the mean by dividing total from the marks
+
+        double totalOfSquares = 0;  // Starting with a empty total 
+
+        // Making a for loop to add up squared differences from the mean
+        for (int i = 0; i < marks.length; i++) {
+            double differenceFromMean= marks[i] - mean;  // Calculate the difference from the mean
+            totalOfSquares += differenceFromMean* differenceFromMean;  // Adding squared difference to the variable
+        }
+
+        double varianceVal = totalOfSquares / marks.length;  // Calculating variance
+        double standardDeviation = Math.sqrt(varianceVal);  // Calculating standard deviation 
+
+        // Print the results
+        System.out.println("\nMean: " + mean);  // Print the mean
+        System.out.println("Standard Deviation: " + standardDeviation);  // Print the standard deviation
+
+
+
     }
 
     
