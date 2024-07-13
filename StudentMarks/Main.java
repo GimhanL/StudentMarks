@@ -135,8 +135,12 @@ return minMark;
     
     // Method for Standard deviation
     public static double CalStandardDeviaton(int[] marks,double mean) {
-    
-    
+    double totalOfSquares = 0; // Starting with a assigning 0 as the first value 
+        // Making a for loop to add up squared differences from the mean
+    for (int i = 0; i < marks.length; i++) {
+      double differenceFromMean = marks[i] - mean; // Calculate the difference from the mean
+      totalOfSquares += differenceFromMean * differenceFromMean; // Adding squared difference to the variable
+    }
     }
 }
 
