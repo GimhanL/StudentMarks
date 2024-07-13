@@ -4,4 +4,6 @@ comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=marks
 comment2.target=int\ MaxMark(int[])
-numComments=3
+comment3.params=marks
+comment3.target=int\ MinMark(int[])
+numComments=4

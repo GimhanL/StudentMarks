@@ -109,4 +109,17 @@ return maxMark;
      
     
 }
+// Method for Heighest mark
+  public static int MinMark(int[] marks) {
+ int minMark = marks[0]; // Assigning maxmark with the first value in the array
+       for (int i = 1; i < marks.length; i++) { // Find the highest mark using for loop
+
+      if (marks[i] < minMark) {
+        minMark = marks[i];
+      }
+    }
+return minMark;
+     
+    
+}
 }
