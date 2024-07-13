@@ -52,7 +52,7 @@ class Main {
     }
 
     //Getting Highest and lowest mark
-    int maxMark = marks[0]; // Checking the first mark
+   
     int minMark = marks[0];
 
     // Find the lowest mark  and highest mark using for loop
@@ -62,9 +62,6 @@ class Main {
         minMark = marks[i]; // Update the lowest mark
       }
 
-      if (marks[i] > maxMark) {
-        maxMark = marks[i];
-      }
     }
 
     // Print the highest and lowest marks
@@ -96,12 +93,17 @@ class Main {
     System.out.println("Standard Deviation: " + standardDeviation); // Print the standard deviation
 
   }
-
-}
 // Method for Heighest mark
   public static int MaxMark(int[] marks) {
  int maxMark = marks[0]; // Assigning maxmark with the first value in the array
-      
+       for (int i = 1; i < marks.length; i++) { // Find the highest mark using for loop
+
+      if (marks[i] > maxMark) {
+        maxMark = marks[i];
+      }
+    }
+return MaxMark;
      
     
+}
 }
