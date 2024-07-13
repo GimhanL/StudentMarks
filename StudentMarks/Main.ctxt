@@ -6,4 +6,6 @@ comment2.params=marks
 comment2.target=int\ MaxMark(int[])
 comment3.params=marks
 comment3.target=int\ MinMark(int[])
-numComments=4
+comment4.params=marks
+comment4.target=double\ CalMean(int[])
+numComments=5

@@ -56,13 +56,15 @@ class Main {
     int maxMark = MaxMark(marks);
     int minMark = MinMark(marks);
 
-
-  
-
     // Print the highest and lowest marks
     System.out.println("\nHighest Mark: " + maxMark);
     System.out.println("Lowest Mark: " + minMark);
 
+    //returning value from CalMean method
+    double mean = CalMean(marks);
+    
+    // Print the mean value
+    System.out.println("\nMean: " + mean); // Print the mean
     double total = 0; // Making total to 0
 
     // Add up all the marks
@@ -70,7 +72,6 @@ class Main {
       total += marks[i]; // Add each mark to the total variable
     }
 
-    double mean = total / marks.length; // Getting the mean by dividing total from the marks
 
     double totalOfSquares = 0; // Starting with a empty total 
 
@@ -114,4 +115,22 @@ return minMark;
      
     
 }
+
+ // Method for mean
+   
+    // Method for mean
+    public static double CalMean(int[] marks) {
+
+ double total = 0; // Making total to 0
+
+    // Add up all the marks
+    for (int i = 0; i < marks.length; i++) {
+      total += marks[i]; // Add each mark to the total variable
+    }
+
+   return total / marks.length; // Getting the mean by dividing total from the marks
+
+
+    }
 }
+
