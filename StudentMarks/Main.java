@@ -51,8 +51,11 @@ class Main {
       System.out.println("marks " + (i + 1) + ": " + marks[i]);
     }
 
-    //Getting Highest and lowest mark
-   
+
+   // Getting highest and lowest mark
+    int maxMark = MaxMark(marks);
+
+
     int minMark = marks[0];
 
     // Find the lowest mark  and highest mark using for loop
@@ -102,7 +105,7 @@ class Main {
         maxMark = marks[i];
       }
     }
-return MaxMark;
+return maxMark;
      
     
 }
