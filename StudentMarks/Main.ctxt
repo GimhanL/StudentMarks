@@ -8,4 +8,6 @@ comment3.params=marks
 comment3.target=int\ MinMark(int[])
 comment4.params=marks
 comment4.target=double\ CalMean(int[])
-numComments=5
+comment5.params=marks\ mean
+comment5.target=double\ CalStandardDeviaton(int[],\ double)
+numComments=6

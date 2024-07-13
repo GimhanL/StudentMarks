@@ -130,7 +130,6 @@ return minMark;
 
    return total / marks.length; // Getting the mean by dividing total from the marks
 
-
     }
     
     // Method for Standard deviation
@@ -141,7 +140,11 @@ return minMark;
       double differenceFromMean = marks[i] - mean; // Calculate the difference from the mean
       totalOfSquares += differenceFromMean * differenceFromMean; // Adding squared difference to the variable
     }
+       double varianceVal = totalOfSquares / marks.length; // Calculating variance
+    return Math.sqrt(varianceVal); // Calculating standard deviation and retun
     }
 }
+    
+
 
  
