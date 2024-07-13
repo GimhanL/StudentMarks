@@ -132,5 +132,12 @@ return minMark;
 
 
     }
+    
+    // Method for Standard deviation
+    public static double CalStandardDeviaton(int[] marks,double mean) {
+    
+    
+    }
 }
 
+ 
