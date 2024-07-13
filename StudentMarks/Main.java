@@ -62,29 +62,9 @@ class Main {
 
     //returning value from CalMean method
     double mean = CalMean(marks);
-    
-    // Print the mean value
-    System.out.println("\nMean: " + mean); // Print the mean
-    double total = 0; // Making total to 0
-
-    // Add up all the marks
-    for (int i = 0; i < marks.length; i++) {
-      total += marks[i]; // Add each mark to the total variable
-    }
-
-
-    double totalOfSquares = 0; // Starting with a empty total 
-
-    // Making a for loop to add up squared differences from the mean
-    for (int i = 0; i < marks.length; i++) {
-      double differenceFromMean = marks[i] - mean; // Calculate the difference from the mean
-      totalOfSquares += differenceFromMean * differenceFromMean; // Adding squared difference to the variable
-    }
-
-    double varianceVal = totalOfSquares / marks.length; // Calculating variance
-    double standardDeviation = Math.sqrt(varianceVal); // Calculating standard deviation 
-
-    // Print the results
+    //returning value from CalStandardDeviaton nethod 
+    double standardDeviation = CalStandardDeviaton(marks,mean);
+    // Print the mean value and standard deviation value
     System.out.println("\nMean: " + mean); // Print the mean
     System.out.println("Standard Deviation: " + standardDeviation); // Print the standard deviation
 
