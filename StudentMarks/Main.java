@@ -100,7 +100,8 @@ class Main {
 }
 // Method for Heighest mark
   public static int MaxMark(int[] marks) {
-
+ int maxMark = marks[0]; // Assigning maxmark with the first value in the array
       
      
-    }
+    
+}
