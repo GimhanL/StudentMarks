@@ -98,3 +98,9 @@ class Main {
   }
 
 }
+// Method for Heighest mark
+  public static int MaxMark(int[] marks) {
+
+      
+     
+    }
