@@ -16,7 +16,7 @@ class Main {
     String assignmentName = myObj.nextLine(); // Storing assignment name
 
     // Loop to get 10 usernames
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {
       System.out.println("Enter Student Name " + (i + 1) + ":");
       userNames[i] = myObj.nextLine(); //Storing in a array
       boolean validInput = false; // Variable to check valid input
@@ -46,7 +46,7 @@ class Main {
     // Displaying all usernames and marks
     System.out.println("\nStudent Name and marks has been entered:");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {
       System.out.println("Student Name " + (i + 1) + ": " + userNames[i]);
       System.out.println("marks " + (i + 1) + ": " + marks[i]);
     }
