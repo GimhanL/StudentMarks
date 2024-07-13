@@ -6,7 +6,7 @@
  */
 import java.util.Scanner; // Import the Scanner class
 
-class Main {
+class Student_Marks {
   public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in); // Create a Scanner object
     String[] userNames = new String[10]; // Creating an array to store 10 student names
