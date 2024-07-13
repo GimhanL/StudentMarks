@@ -1,7 +1,8 @@
 /**
- * Write a description of class Main here.
+ * This program takes an assignment name, students' names, and marks under 30. 
+ * It then calculates the highest, lowest, mean, and standard deviation of the marks entered.
  *
- * @author (Gimhan Lakshitha)
+ * @author Gimhan Lakshitha
  * @version (a version number or a date)
  */
 import java.util.Scanner; // Import the Scanner class
