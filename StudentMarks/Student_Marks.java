@@ -11,7 +11,7 @@ class Student_Marks {
   public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in); // Create a Scanner object
     String[] userNames = new String[10]; // Creating an array to store 10 student names
-    int[] marks = new int[10]; // Create an array to store 10 usernames
+    float[] marks = new float[10]; // Create an array to store 10 marks as float
 
     System.out.println("Enter Assignment Name:");
     String assignmentName = myObj.nextLine(); // Storing assignment name
@@ -25,16 +25,16 @@ class Student_Marks {
         System.out.println("Enter marks of " + userNames[i] + ":");
         String markInput = myObj.nextLine(); // Read user input as String
         try {
-          int mark = Integer.parseInt(markInput); // converting to int
+          float mark = Float.parseFloat(markInput); // converting to float
 
           if (mark >= 0 && mark <= 30) {
             marks[i] = mark;
             validInput = true; // Input is valid, exit the loop
           } else {
-            System.out.println("Invalid input. Marks must be between 0 and 30.");
+            System.out.println("Please enter marks that is below 30 and above 0");
           }
         } catch (NumberFormatException e) {
-          System.out.println("This is not a number. Please enter a valid number."); //validating non numeric inputs
+          System.out.println("The input is not a number! Please enter a correct number."); //validating non numeric inputs
         }
       }
     }
@@ -53,8 +53,8 @@ class Student_Marks {
     }
 
     // Getting highest and lowest mark
-    int maxMark = MaxMark(marks);
-    int minMark = MinMark(marks);
+    float maxMark = MaxMark(marks);
+    float minMark = MinMark(marks);
 
     // Print the highest and lowest marks
     System.out.println("\nHighest Mark: " + maxMark);
@@ -70,8 +70,8 @@ class Student_Marks {
 
   }
   // Method for heighest mark
-  public static int MaxMark(int[] marks) {
-    int maxMark = marks[0]; // Assigning maxmark with the first value in the array
+  public static float MaxMark(float[] marks) {
+    float maxMark = marks[0]; // Assigning maxmark with the first value in the array
     for (int i = 1; i < marks.length; i++) { // Find the highest mark using for loop
 
       if (marks[i] > maxMark) {
@@ -82,8 +82,8 @@ class Student_Marks {
 
   }
   // Method for minimum mark
-  public static int MinMark(int[] marks) {
-    int minMark = marks[0]; // Assigning minmark with the first value in the array
+  public static float MinMark(float[] marks) {
+    float minMark = marks[0]; // Assigning minmark with the first value in the array
     for (int i = 1; i < marks.length; i++) { // Find the minimum mark using for loop
 
       if (marks[i] < minMark) {
@@ -95,7 +95,7 @@ class Student_Marks {
   }
 
   // Method for mean
-  public static double CalMean(int[] marks) {
+  public static double CalMean(float[] marks) {
 
     double total = 0; // Making total to 0
 
@@ -106,10 +106,10 @@ class Student_Marks {
 
     return total / marks.length; // Getting the mean by dividing total from the marks
 
-  }
+  } 
 
   // Method for standard deviation
-  public static double CalStandardDeviaton(int[] marks, double mean) {
+  public static double CalStandardDeviaton(float[] marks, double mean) {
     double totalOfSquares = 0; // Starting with a assigning 0 as the first value 
     // Making a for loop to add up squared differences from the mean
     for (int i = 0; i < marks.length; i++) {
