@@ -10,14 +10,14 @@ import java.util.Scanner; // Import the Scanner class
 class Student_Marks {
   public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in); // Create a Scanner object
-    String[] userNames = new String[10]; // Creating an array to store 10 student names
-    float[] marks = new float[10]; // Create an array to store 10 marks as float
+    String[] userNames = new String[30]; // Creating an array to store 30 student names
+    float[] marks = new float[30]; // Create an array to store 30 marks as float
 
     System.out.println("Enter Assignment Name:");
     String assignmentName = myObj.nextLine(); // Storing assignment name
 
     // Loop to get 10 usernames
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 30; i++) {
       System.out.println("Enter Student Name " + (i + 1) + ":");
       userNames[i] = myObj.nextLine(); //Storing in a array
       boolean validInput = false; // Variable to check valid input
@@ -47,7 +47,7 @@ class Student_Marks {
     // Displaying all usernames and marks
     System.out.println("\nStudent Name and marks has been entered:");
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 30; i++) {
       System.out.println("Student Name " + (i + 1) + ": " + userNames[i]);
       System.out.println("marks " + (i + 1) + ": " + marks[i]);
     }
@@ -106,7 +106,7 @@ class Student_Marks {
 
     return total / marks.length; // Getting the mean by dividing total from the marks
 
-  } 
+  }
 
   // Method for standard deviation
   public static double CalStandardDeviaton(float[] marks, double mean) {
