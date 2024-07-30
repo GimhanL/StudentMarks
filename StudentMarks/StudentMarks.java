@@ -19,7 +19,9 @@ public class StudentMarks
         String[] studentIDs = new String[100];
         float[] totalMarks = new float[100];
         int[] marksCount = new int[100];
-  
+        
+    // Importing the text file
+        String filePath = "prog5001_students_grade_2022.txt";
     }
     
 }
