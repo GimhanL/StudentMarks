@@ -22,6 +22,18 @@ public class StudentMarks
         
     // Importing the text file
         String filePath = "prog5001_students_grade_2022.txt";
+        
+        readDataFromFile(filePath, names, studentIDs, totalMarks, marksCount); // Calling method to read the file
+        
+    private static void readDataFromFile(String filePath, String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount)
+    {
+    try{
+        
+    }catch(NumberFormatException e){
+        
+    }
+}
+
     }
     
 }
