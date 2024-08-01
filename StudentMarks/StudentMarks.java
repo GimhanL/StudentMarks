@@ -25,6 +25,15 @@ public class StudentMarks
         
         readDataFromFile(filePath, names, studentIDs, totalMarks, marksCount); // Calling method to read the file
         
+        //checking the text document values are showing in the text document
+        for (int i = 0; i < names.length && names[i] != null; i++) {
+            System.out.println("Student ID: " + studentIDs[i]);
+            System.out.println("Student Name: " + names[i]);
+            System.out.println("Total Marks: " + totalMarks[i]);
+            System.out.println("Marks Count: " + marksCount[i]);
+            System.out.println();
+        }
+    }
     private static void readDataFromFile(String filePath, String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount)
     {
     try{
