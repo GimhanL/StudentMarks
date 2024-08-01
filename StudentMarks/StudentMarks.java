@@ -44,7 +44,7 @@ public class StudentMarks
               String Data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
               // Adding commas to the data
               String[] slots =  Data.split(",");
-              if (slots.length > 3) {//Validation if the array has more than 3 element it will coninue
+              if (slots.length > 4) {//Validation if the array has more than 3 element it will coninue
                   String studentID = slots[0].trim();//assign StudentID data to slots array
                   String name = slots[1].trim() + " " + slots[0].trim();//adding last name and first name to the slots array
                   String a1 = slots[2].trim();
@@ -52,7 +52,7 @@ public class StudentMarks
                   String a3 = slots[4].trim();
                   
                  // Checking marks has any text
-                 if (!a1.isEmpty() || !a2.isEmpty() || !a3.isEmpty()) {
+                 if (a1.isEmpty() && a2.isEmpty() && a3.isEmpty()) {
                      continue;
                 
                 }
@@ -67,18 +67,18 @@ public class StudentMarks
 
                 
                    //Creating a for loop to get marks values after 3rd array slot
-                   for (int i = 3; i < slot.length; i++) {
+                   for (int i = 3; i < slots.length; i++) {
                         try {
                             //checking for whitspace
-                            if (!slot[i].trim().isEmpty()) {
+                            if (!slots[i].trim().isEmpty()) {
                                 // Adding mark to total marks
-                                totalMarks[index] += Float.parseFloat(slot[i].trim());
+                                totalMarks[index] += Float.parseFloat(slots[i].trim());
                                 // Adding the marks for the student
                                 marksCount[index]++;
                             }
                             //if the value isn't a number throws a error 
                         }catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark: " + parts[i]);
+                            System.out.println("Skipping invalid mark: " + slots[i]);
                         }
                     }
                         
