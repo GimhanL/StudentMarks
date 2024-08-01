@@ -33,15 +33,34 @@ public class StudentMarks
          // Creating while loop to read the text file lines
           while (fileScanner.hasNextLine() && index < 100) { 
               String Data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
-              
+              // Adding commas to the data
+              String[] slots =  Data.split(",");
+              if (slots.length > 3) {//Validation if the array has more than 3 element it will coninue
+                  String studentID = slots[0].trim();//assign StudentID data to slots array
+                  String name = slots[1].trim() + " " + slots[0].trim();//adding last name and first name to the slots array
+                  String a1 = parts[2].trim();
+                  String a2 = parts[3].trim();
+                  String a3 = parts[4].trim();
+                  
+                 // Checking marks has any text
+                 if (!a1.isEmpty() || !a2.isEmpty() || !a3.isEmpty()) {
+                     continue;
+                
+                }
+                
+             
+            }
+        }
+        } catch (NumberFormatException e) {
+            // Handle invalid marks
+            System.out.println("Skipping invalid mark: " + parts[i]);
+        }
+    }
+  
+}
              
         
-    }
-}catch(NumberFormatException e){
-        
-    }
-}
-
-    }
+ 
     
-}
+    
+
