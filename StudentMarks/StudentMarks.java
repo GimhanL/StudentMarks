@@ -71,15 +71,19 @@ public class StudentMarks
                         }catch (NumberFormatException e) {
                             System.out.println("Skipping invalid mark: " + parts[i]);
                         }
-}
-}
-}
-}catch(Exception e){
-    
-}
-}
+                    }
+                        
+                        index++;
+                    }
+                }
+                // Close the file scanner
+                fileScanner.close();
+            }catch(FileNotFoundException e){
+                // if the file is not detectable it will shows the error
+                System.out.println("File not found!");
+            }
+        }
 }
 
-    
     
 
