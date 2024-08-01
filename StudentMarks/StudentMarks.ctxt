@@ -4,4 +4,6 @@ comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=filePath\ names\ studentIDs\ totalMarks\ marksCount
 comment2.target=void\ readDataFromFile(java.lang.String,\ java.lang.String[],\ java.lang.String[],\ float[],\ int[])
-numComments=3
+comment3.params=
+comment3.target=void\ menu()
+numComments=4

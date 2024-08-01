@@ -33,7 +33,33 @@ public class StudentMarks
             System.out.println("Marks Count: " + marksCount[i]);
             System.out.println();
         }
+        // Menu choices
+        while (true) {
+            menu(); // Displaying the menu 
+            int number = inputScanner.nextInt(); // getting the input value
+
+            switch (number) {
+                case 1:
+                    System.out.println("Menu choice 1"); 
+                    break;
+                case 2:
+                   System.out.println("Menu choice 2"); 
+                    break;
+                case 3:
+                   System.out.println("Menu choice 3"); 
+                    break;
+                case 4:
+                    System.out.print("Menu choice 4");
+                    break;
+                case 5:
+                   System.out.println("Menu choice 5"); 
+                    break;
+                default:
+                    System.out.println("Invalid choice."); 
+            }
+        }
     }
+    
     private static void readDataFromFile(String filePath, String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount)
     {
     try{
@@ -92,7 +118,21 @@ public class StudentMarks
                 System.out.println("File not found!");
             }
         }
+        
+    // Method to display the menu
+    private static void menu() {
+        System.out.println("\n_______________Menu_____________________");
+        System.out.println();
+        System.out.println("1.Display all students and their average grade");
+        System.out.println("2.Display highest and lowest marks");
+        System.out.println("3.Display mean and standard deviation");
+        System.out.println("4.Display students that below the threshold");
+        System.out.println("5.Display top 5 students with highest and lowest average marks");
+        System.out.println();
+        System.out.print("Please write the number that you want to select? ");
+    }
 }
+
 
     
 
