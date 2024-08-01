@@ -28,8 +28,16 @@ public class StudentMarks
     private static void readDataFromFile(String filePath, String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount)
     {
     try{
+         Scanner fileScanner = new Scanner(new File(filePath)); // Creating a Scanner object to read the file
+         int index = 0; // Initialize the index for storing data in arrays
+         // Creating while loop to read the text file lines
+          while (fileScanner.hasNextLine() && index < 100) { 
+              String Data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
+              
+             
         
-    }catch(NumberFormatException e){
+    }
+}catch(NumberFormatException e){
         
     }
 }
