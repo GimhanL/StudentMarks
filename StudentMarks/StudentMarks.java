@@ -38,15 +38,24 @@ public class StudentMarks
               if (slots.length > 3) {//Validation if the array has more than 3 element it will coninue
                   String studentID = slots[0].trim();//assign StudentID data to slots array
                   String name = slots[1].trim() + " " + slots[0].trim();//adding last name and first name to the slots array
-                  String a1 = parts[2].trim();
-                  String a2 = parts[3].trim();
-                  String a3 = parts[4].trim();
+                  String a1 = slots[2].trim();
+                  String a2 = slots[3].trim();
+                  String a3 = slots[4].trim();
                   
                  // Checking marks has any text
                  if (!a1.isEmpty() || !a2.isEmpty() || !a3.isEmpty()) {
                      continue;
                 
                 }
+                  //Storing student ID
+                  studentIDs[index] = studentID;
+                  // Storing student name
+                  names[index] = name;
+                  //making current student totalMarks mark as 0
+                  totalMarks[index] = 0;
+                  //making current student marksCount mark as 0
+                  marksCount[index] = 0;
+
                 
              
             }
