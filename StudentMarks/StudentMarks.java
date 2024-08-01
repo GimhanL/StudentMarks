@@ -58,11 +58,18 @@ public class StudentMarks
 
                 
                    //Creating a for loop to get marks values after 3rd array slot
-                   for (int i = 3; i < parts.length; i++) {
+                   for (int i = 3; i < slot.length; i++) {
                         try {
-                            
+                            //checking for whitspace
+                            if (!slot[i].trim().isEmpty()) {
+                                // Adding mark to total marks
+                                totalMarks[index] += Float.parseFloat(slot[i].trim());
+                                // Adding the marks for the student
+                                marksCount[index]++;
+                            }
+                            //if the value isn't a number throws a error 
                         }catch (NumberFormatException e) {
-                            
+                            System.out.println("Skipping invalid mark: " + parts[i]);
                         }
 }
 }
