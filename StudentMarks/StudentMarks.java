@@ -57,19 +57,22 @@ public class StudentMarks
                   marksCount[index] = 0;
 
                 
-             
-            }
-        }
-        } catch (NumberFormatException e) {
-            // Handle invalid marks
-            System.out.println("Skipping invalid mark: " + parts[i]);
-        }
-    }
-  
+                   //Creating a for loop to get marks values after 3rd array slot
+                   for (int i = 3; i < parts.length; i++) {
+                        try {
+                            
+                        }catch (NumberFormatException e) {
+                            
+                        }
 }
-             
-        
- 
+}
+}
+}catch(Exception e){
+    
+}
+}
+}
+
     
     
 
