@@ -2,10 +2,10 @@
 comment0.target=StudentMarks
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=filePath\ names\ studentIDs\ totalMarks\ marksCount
+comment2.params=filePath\ names\ stuID\ totalMarks\ marksCount
 comment2.target=void\ readDataFromFile(java.lang.String,\ java.lang.String[],\ java.lang.String[],\ float[],\ int[])
 comment3.params=
 comment3.target=void\ menu()
-comment4.params=names\ studentIDs\ totalMarks\ marksCount
+comment4.params=names\ stuID\ totalMarks\ marksCount
 comment4.target=void\ AllStudentsAvg(java.lang.String[],\ java.lang.String[],\ float[],\ int[])
 numComments=5

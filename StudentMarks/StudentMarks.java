@@ -16,18 +16,18 @@ public class StudentMarks
         
         // Adding 100 arrays to each variable 
         String[] names = new String[100];
-        String[] studentIDs = new String[100];
+        String[] stuID = new String[100];
         float[] totalMarks = new float[100];
         int[] marksCount = new int[100];
         
     // Importing the text file
         String filePath = "prog5001_students_grade_2022.txt";
         
-        readDataFromFile(filePath, names, studentIDs, totalMarks, marksCount); // Calling method to read the file
+        readDataFromFile(filePath, names, stuID, totalMarks, marksCount); // Calling method to read the file
         
         //checking the text document values are showing in the text document
         for (int i = 0; i < names.length && names[i] != null; i++) {
-            System.out.println("Student ID: " + studentIDs[i]);
+            System.out.println("Student ID: " + stuID[i]);
             System.out.println("Student Name: " + names[i]);
             System.out.println("Total Marks: " + totalMarks[i]);
             System.out.println("Marks Count: " + marksCount[i]);
@@ -40,7 +40,7 @@ public class StudentMarks
 
             switch (number) {
                 case 1:
-                    AllStudentsAvg(names, studentIDs, totalMarks, marksCount); // Display all students
+                    AllStudentsAvg(names, stuID, totalMarks, marksCount); // Display all students
                     break;
                 case 2:
                    System.out.println("Menu choice 2"); 
@@ -60,7 +60,7 @@ public class StudentMarks
         }
     }
     
-    private static void readDataFromFile(String filePath, String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount)
+    private static void readDataFromFile(String filePath, String[] names, String[] stuID, float[] totalMarks, int[] marksCount)
     {
     try{
          Scanner fileScanner = new Scanner(new File(filePath)); // Creating a Scanner object to read the file
@@ -83,7 +83,7 @@ public class StudentMarks
                 
                 }
                   //Storing student ID
-                  studentIDs[index] = studentID;
+                  stuID[index] = studentID;
                   // Storing student name
                   names[index] = name;
                   //making current student totalMarks mark as 0
@@ -132,10 +132,12 @@ public class StudentMarks
         System.out.print("Please write the number that you want to select? ");
     }
       // display all student with average marks
-    private static void AllStudentsAvg(String[] names,String[] studentIDs,float[] totalMarks,int[] marksCount) {
+    private static void AllStudentsAvg(String[] names,String[] stuID,float[] totalMarks,int[] marksCount) {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
             float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;// Calculating average makes for all students
+            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] + ", Average Marks: " + avgMark);
+
         }
         
     }    
