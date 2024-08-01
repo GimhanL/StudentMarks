@@ -134,6 +134,9 @@ public class StudentMarks
       // display all student with average marks
     private static void AllStudentsAvg(String[] names,String[] studentIDs,float[] totalMarks,int[] marksCount) {
         System.out.println("\n_____________________Student list_____________________ ");
+        for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
+            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;// Calculating average makes for all students
+        }
         
     }    
   
