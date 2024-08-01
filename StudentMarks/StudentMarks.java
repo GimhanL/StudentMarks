@@ -40,7 +40,7 @@ public class StudentMarks
 
             switch (number) {
                 case 1:
-                    System.out.println("Menu choice 1"); 
+                    AllStudentsAvg(names, studentIDs, totalMarks, marksCount); // Display all students
                     break;
                 case 2:
                    System.out.println("Menu choice 2"); 
