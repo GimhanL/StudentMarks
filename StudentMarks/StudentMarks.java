@@ -121,7 +121,7 @@ public class StudentMarks
         
     // Method to display the menu
     private static void menu() {
-        System.out.println("\n_______________Menu_____________________");
+        System.out.println("\n_____________________Menu_____________________");
         System.out.println();
         System.out.println("1.Display all students and their average grade");
         System.out.println("2.Display highest and lowest marks");
@@ -131,6 +131,12 @@ public class StudentMarks
         System.out.println();
         System.out.print("Please write the number that you want to select? ");
     }
+      // display all student with average marks
+    private static void AllStudentsAvg(String[] names,String[] studentIDs,float[] totalMarks,int[] marksCount) {
+        System.out.println("\n_____________________Student list_____________________ ");
+        
+    }    
+  
 }
 
 
