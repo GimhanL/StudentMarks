@@ -43,7 +43,7 @@ public class StudentMarks
                     AllStudentsAvg(names, stuID, totalMarks, marksCount); // Display all students
                     break;
                 case 2:
-                   System.out.println("Menu choice 2"); 
+                    HighAndLowMarks(names,stuID,totalMarks,marksCount);// Display lowest and highest marks
                     break;
                 case 3:
                    System.out.println("Menu choice 3"); 
@@ -153,14 +153,22 @@ public class StudentMarks
     for (int i = 0; i < totalMarks.length && names[i] != null; i++) {
         float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; //if the mark count greater than 0 it will be true and  and dvide the marks
          if (avgMark > maxMark) {
-            maxMark = avgMark; // Update maxMark if the current average is higher
+            maxMark = avgMark; // if the average mark is higher it will update the max mark 
             maxMarkStudentName = names[i];
             maxMarkStudentID = stuID[i];
         }
+        if (avgMark < minMark) {
+            minMark = avgMark; //if the average mark is lower it will update the min mark 
+            minMarkStudentName = names[i];
+            minMarkStudentID = stuID[i];
+        }
     }
-  
+   //Printing out the marks
+    System.out.println("Student details with average max mark: " + maxMarkStudentName + " (ID: " + maxMarkStudentID + ")");
+    System.out.println("Student with Lowest Average Mark: " + minMarkStudentName + " (ID: " + minMarkStudentID + ")");
+}  
 }
-}
+
 
     
 
