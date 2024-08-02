@@ -142,7 +142,13 @@ public class StudentMarks
         
     }    
     private static void HighAndLowMarks(String[] names,String[] stuID,float[] totalMarks,int[] marksCount) {
-         
+        
+    float maxMark = Float.MIN_VALUE; // Assigning minimum mark value to the variable
+    float minMark = Float.MAX_VALUE; // Assiging max mark value to the variable
+    String maxMarkStudentName = ""; // Allocating empty string until the data found
+    String maxMarkStudentID = "";
+    String minMarkStudentName = "";
+    String minMarkStudentID = "";    
     }
   
 }
