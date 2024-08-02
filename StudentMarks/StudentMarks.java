@@ -148,11 +148,14 @@ public class StudentMarks
     String maxMarkStudentName = ""; // Allocating empty string until the data found
     String maxMarkStudentID = "";
     String minMarkStudentName = "";
-    String minMarkStudentID = "";    
+    String minMarkStudentID = "";  
+    // Find the minimum mark and maximum mark using for loop
+    for (int i = 0; i < totalMarks.length && names[i] != null; i++) {
+        
     }
   
 }
-
+}
 
     
 
