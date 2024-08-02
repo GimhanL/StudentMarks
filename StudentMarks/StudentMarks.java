@@ -135,12 +135,15 @@ public class StudentMarks
     private static void AllStudentsAvg(String[] names,String[] stuID,float[] totalMarks,int[] marksCount) {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
-            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;// Calculating average makes for all students
+            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;// Calculating average marks for all students
             System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] + ", Average Marks: " + avgMark);
 
         }
         
     }    
+    private static void HighAndLowMarks(String[] names,String[] stuID,float[] totalMarks,int[] marksCount) {
+         
+    }
   
 }
 

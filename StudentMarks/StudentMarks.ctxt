@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ menu()
 comment4.params=names\ stuID\ totalMarks\ marksCount
 comment4.target=void\ AllStudentsAvg(java.lang.String[],\ java.lang.String[],\ float[],\ int[])
-numComments=5
+comment5.params=names\ stuID\ totalMarks\ marksCount
+comment5.target=void\ HighAndLowMarks(java.lang.String[],\ java.lang.String[],\ float[],\ int[])
+numComments=6
