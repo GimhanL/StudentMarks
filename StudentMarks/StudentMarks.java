@@ -26,13 +26,13 @@ public class StudentMarks
         readDataFromFile(filePath, names, stuID, totalMarks, marksCount); // Calling method to read the file
         
         //checking the text document values are showing in the text document
-        for (int i = 0; i < names.length && names[i] != null; i++) {
+       /* for (int i = 0; i < names.length && names[i] != null; i++) {
             System.out.println("Student ID: " + stuID[i]);
             System.out.println("Student Name: " + names[i]);
             System.out.println("Total Marks: " + totalMarks[i]);
             System.out.println("Marks Count: " + marksCount[i]);
             System.out.println();
-        }
+        }*/
         // Menu choices
         while (true) {
             menu(); // Displaying the menu 
@@ -43,7 +43,7 @@ public class StudentMarks
                     AllStudentsAvg(names, stuID, totalMarks, marksCount); // Display all students
                     break;
                 case 2:
-                    HighAndLowMarks(names,stuID,totalMarks,marksCount);// Display lowest and highest marks
+                    HighAndLowMarks(totalMarks,marksCount);// Display lowest and highest marks
                     break;
                 case 3:
                    System.out.println("Menu choice 3"); 
@@ -67,21 +67,22 @@ public class StudentMarks
          int index = 0; // Initialize the index for storing data in arrays
          // Creating while loop to read the text file lines
           while (fileScanner.hasNextLine() && index < 100) { 
-              String Data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
+              String data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
+              
+              if (data.isEmpty() || data.startsWith("Unit") || data.startsWith("Last Name")) {
+                    continue;
+                }
               // Adding commas to the data
-              String[] slots =  Data.split(",");
+              String[] slots =  data.split(",");
               if (slots.length > 4) {//Validation if the array has more than 3 element it will coninue
                   String studentID = slots[0].trim();//assign StudentID data to slots array
                   String name = slots[1].trim() + " " + slots[0].trim();//adding last name and first name to the slots array
                   String a1 = slots[2].trim();
                   String a2 = slots[3].trim();
                   String a3 = slots[4].trim();
-                  
-                 // Checking marks has any text
-                 if (a1.isEmpty() && a2.isEmpty() && a3.isEmpty()) {
-                     continue;
+               
                 
-                }
+                
                   //Storing student ID
                   stuID[index] = studentID;
                   // Storing student name
@@ -141,34 +142,32 @@ public class StudentMarks
         }
         
     }    
-    private static void HighAndLowMarks(String[] names,String[] stuID,float[] totalMarks,int[] marksCount) {
+    private static void HighAndLowMarks(float[] totalMarks,int[] marksCount) {
         
     float maxMark = Float.MIN_VALUE; // Assigning minimum mark value to the variable
     float minMark = Float.MAX_VALUE; // Assiging max mark value to the variable
-    String maxMarkStudentName = ""; // Allocating empty string until the data found
-    String maxMarkStudentID = "";
-    String minMarkStudentName = "";
-    String minMarkStudentID = "";  
+
     // Find the minimum mark and maximum mark using for loop
-    for (int i = 0; i < totalMarks.length && names[i] != null; i++) {
+    for (int i = 0; i < totalMarks.length && totalMarks[i] != 0; i++) {
         float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; //if the mark count greater than 0 it will be true and  and dvide the marks
          if (avgMark > maxMark) {
             maxMark = avgMark; // if the average mark is higher it will update the max mark 
-            maxMarkStudentName = names[i];
-            maxMarkStudentID = stuID[i];
+         
         }
-        if (avgMark < minMark) {
+        if (avgMark < minMark && avgMark > 0) {
             minMark = avgMark; //if the average mark is lower it will update the min mark 
-            minMarkStudentName = names[i];
-            minMarkStudentID = stuID[i];
+           
         }
-    }
-   //Printing out the marks
-    System.out.println("Student details with average max mark: " + maxMarkStudentName + " (ID: " + maxMarkStudentID + ")");
-    System.out.println("Student with Lowest Average Mark: " + minMarkStudentName + " (ID: " + minMarkStudentID + ")");
-}  
-}
+             
+        }
 
+    
+   //Printing out the marks
+    System.out.println("Average max mark: " + maxMark);
+    System.out.println("Lowest Average Mark: " + minMark);
+}  
+
+}
 
     
 
