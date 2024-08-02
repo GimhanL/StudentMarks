@@ -151,7 +151,12 @@ public class StudentMarks
     String minMarkStudentID = "";  
     // Find the minimum mark and maximum mark using for loop
     for (int i = 0; i < totalMarks.length && names[i] != null; i++) {
-        
+        float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; //if the mark count greater than 0 it will be true and  and dvide the marks
+         if (avgMark > maxMark) {
+            maxMark = avgMark; // Update maxMark if the current average is higher
+            maxMarkStudentName = names[i];
+            maxMarkStudentID = stuID[i];
+        }
     }
   
 }
