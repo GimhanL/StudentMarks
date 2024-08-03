@@ -234,8 +234,13 @@ private static class Student {// adding  inner class to store student details
     //Creating an array to store student objects
     Student[] students = new Student[100];
     int count = 0;  //making count variable to 0
+    
+     for (int i = 0; i < names.length && names[i] != null; i++) {//Creating a for loop to get the student data to the student array 
+         
+        }
 
 }
+
 }
 
 
