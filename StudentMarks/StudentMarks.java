@@ -218,6 +218,10 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
     }
     
     private static void Top5Students(String[] names,String[] stuID, float[] totalMarks,int[] marksCount) {
+        
+private static class Student {// adding  inner class to store student details
+    
+}
     }
 }
 
