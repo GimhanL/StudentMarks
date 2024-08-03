@@ -230,7 +230,7 @@ private static class Student {// adding  inner class to store student details
     this.studentID = studentID;        //Assigining the parameter to the student ID
     this.avgMarks = avgMarks;  //Assigining the parameter to the average marks
         }
-    
+    }
     //Creating an array to store student objects
     Student[] students = new Student[100];
     int count = 0;  //making count variable to 0
@@ -240,9 +240,14 @@ private static class Student {// adding  inner class to store student details
          float avgMarks = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;//Calculating the average mark to the current student
         students[count++] = new Student(names[i], studentIDs[i], avgMarks);//Creating a student object and assigning it to the array
         }
-}
+    // sorting the students array by average marks in descending order
+    bubbleSort(students, count);
+        
 
 }
+
+
+
 
 private static void bubbleSort(Student[] students, int n) {//sorting students based on the average marks using bubble sort
     // end recursion if only one element 
