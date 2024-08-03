@@ -69,6 +69,7 @@ public class StudentMarks
           while (fileScanner.hasNextLine() && index < 100) { 
               String data = fileScanner.nextLine().trim(); // Read data in the line and removing whitespace
               
+              //ignoring empty lines and header lines
               if (data.isEmpty() || data.startsWith("Unit") || data.startsWith("Last Name")) {
                     continue;
                 }
@@ -166,7 +167,9 @@ public class StudentMarks
     System.out.println("Average max mark: " + maxMark);
     System.out.println("Lowest Average Mark: " + minMark);
 }  
-
+  private static void MeanAndStandardDeviation(float[] totalMarks, int[] marksCount) {
+     
+    }
 }
 
     
