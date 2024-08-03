@@ -171,7 +171,8 @@ public class StudentMarks
  
     }
     private static double CalMean(float[] marks, int[] marksCount) {
-        
+         double total = 0; // Making total to 0
+         int count = 0;// Making count 0
 }
 }
 
