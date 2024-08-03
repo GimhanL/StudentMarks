@@ -46,7 +46,7 @@ public class StudentMarks
                     HighAndLowMarks(totalMarks,marksCount);// Display lowest and highest marks
                     break;
                 case 3:
-                   System.out.println("Menu choice 3"); 
+                    MeanAndStandardDeviation(totalMarks, marksCount);
                     break;
                 case 4:
                     System.out.print("Menu choice 4");
@@ -185,6 +185,7 @@ public class StudentMarks
                return count > 0 ? total / count : 0;// returning mean if the count is greater than 0
 
 }
+private static double CalStandardDeviation(float[] marks, int[] marksCount, double mean) {
 
     }
 
