@@ -197,6 +197,7 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
                 }
         }
         double varianceVal = count > 0 ? totalOfSquares / count : 0;// Calculating variance
+        return Math.sqrt(varianceVal);// Calculating standard deviation and retun
 
     }
 
