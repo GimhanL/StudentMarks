@@ -190,7 +190,7 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
      int count = 0;// Making count 0
       for (int i = 0; i < marks.length && marks[i] != 0; i++) {//creating a for loop
              if (marksCount[i] > 0) {// if any mark value is greater than 0 it will continue
-                 
+                     double averageMark = marks[i] / marksCount[i];//calculating average marks from the current student
                 }
         }
 
