@@ -223,7 +223,7 @@ private static class Student {// adding  inner class to store student details
     String name;        
     String studentID;  
     float avgMarks; // declaring variables  
-}
+
  // Declaring a constructor to create a student object
  Student(String name, String stuID, float avgMarks) {
               this.name = name;         //Assigining the parameter to the student name
@@ -231,7 +231,13 @@ private static class Student {// adding  inner class to store student details
     this.avgMarks = avgMarks;  //Assigining the parameter to the average marks
         }
     }
+    //Creating an array to store student objects
+    Student[] students = new Student[100];
+    int count = 0;  //making count variable to 0
+
 }
+}
+
 
 
 
