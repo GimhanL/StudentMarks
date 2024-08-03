@@ -238,6 +238,11 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
         for (int i = 0; i < 5 && i < count; i++) {//For loop to get the five marks
             System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].avgMarks);
         }
+         // Displaying the lowest average marks fot top 5 students
+        System.out.println("\nThe Top 5 Students with Lowest Average Marks:");
+        for (int i = count - 1; i >= Math.max(0, count - 5); i--) {// starting out the loop with lowest average marks
+            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].avgMarks);
+        }
 
 }
 
