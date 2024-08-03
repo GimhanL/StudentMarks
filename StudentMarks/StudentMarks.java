@@ -49,7 +49,9 @@ public class StudentMarks
                     MeanAndStandardDeviation(totalMarks, marksCount);
                     break;
                 case 4:
-                    System.out.print("Menu choice 4");
+                    System.out.print("Please enter the mark threshold that you want to check : ");
+                    float threshold = inputScanner.nextFloat(); //psssing the threshold value to the variable 
+                    StudentsThreshold(names,stuID,totalMarks,marksCount,threshold); 
                     break;
                 case 5:
                    System.out.println("Menu choice 5"); 
@@ -204,11 +206,13 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
 
     }
     
-    private static void StudentsThreshold(String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount, float threshold) {
+    private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
     for (int i = 0; i < names.length && names[i] != null; i++) {//adding a for loop to get the student details
         float averageMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;  // Calculating the average marks for the current student
         // using a if condition to check  the average marks are below the threshold
         if (averageMark < threshold) {
+             // Printing the marks
+            System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Average Marks: " + averageMark);
         }
         
     }
