@@ -169,7 +169,10 @@ public class StudentMarks
 }
   private static void MeanAndStandardDeviation(float[] totalMarks, int[] marksCount) {
       double mean = CalMean(totalMarks, marksCount);//Calling Calmean method and assigning it to the variable
-         System.out.println("\nMean: " + mean);
+      double standardDeviation = CalStandardDeviation(totalMarks, marksCount, mean);//Calling CalStandardDeviation method and assigning it to the variable
+
+      System.out.println("\nMean: " + mean);
+      System.out.println("Standard Deviation: " + standardDeviation);
  
     }
   
@@ -197,7 +200,8 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
                 }
         }
         double varianceVal = count > 0 ? totalOfSquares / count : 0;// Calculating variance
-        return Math.sqrt(varianceVal);// Calculating standard deviation and retun
+        return Math.sqrt(varianceVal);// Calculating standard deviation and return
 
     }
+}
 
