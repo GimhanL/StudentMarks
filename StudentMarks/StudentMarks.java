@@ -247,9 +247,10 @@ private static class Student {// adding  inner class to store student details
 private static void bubbleSort(Student[] students, int n) {//sorting students based on the average marks using bubble sort
     // end recursion if only one element 
     if (n == 1) return;
-
-    
-    
+    // Perform one pass of bubble sort
+    for (int i = 0; i < n - 1; i++) {// creating a for loop to sort the data
+        
+    }
 }
 }
 
