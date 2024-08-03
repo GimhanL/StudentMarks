@@ -188,6 +188,9 @@ public class StudentMarks
 private static double CalStandardDeviation(float[] marks, int[] marksCount, double mean) {
      double totalOfSquares = 0;// Making total to 0
      int count = 0;// Making count 0
+      for (int i = 0; i < marks.length && marks[i] != 0; i++) {//creating a for loop
+          
+        }
 
     }
 
