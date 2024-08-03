@@ -224,6 +224,10 @@ private static class Student {// adding  inner class to store student details
     String studentID;  
     float averageMarks; // declaring variables  
 }
+ // Declaring a constructor to create a student object
+ Student(String name, String stuID, float avgMarks) {
+            
+        }
     }
 }
 
