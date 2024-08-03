@@ -174,7 +174,9 @@ public class StudentMarks
          double total = 0; // Making total to 0
          int count = 0;// Making count 0
           for (int i = 0; i < marks.length && marks[i] != 0; i++) {//creating a for loop
-              
+              if (marksCount[i] > 0) {// if any mark value is greater than 0 it will continue
+                  
+                }
             }
 }
 }
