@@ -166,20 +166,22 @@ public class StudentMarks
    //Printing out the marks
     System.out.println("Average max mark: " + maxMark);
     System.out.println("Lowest Average Mark: " + minMark);
-}  
+}
   private static void MeanAndStandardDeviation(float[] totalMarks, int[] marksCount) {
  
     }
+  
     private static double CalMean(float[] marks, int[] marksCount) {
          double total = 0; // Making total to 0
          int count = 0;// Making count 0
           for (int i = 0; i < marks.length && marks[i] != 0; i++) {//creating a for loop
               if (marksCount[i] > 0) {// if any mark value is greater than 0 it will continue
-                  
+                    total += marks[i] / marksCount[i];//getting average marks by dividing the total marks
+                    count++;
                 }
             }
-}
+
 }
 
-    
+    }
 
