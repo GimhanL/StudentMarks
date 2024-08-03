@@ -222,11 +222,13 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
 private static class Student {// adding  inner class to store student details
     String name;        
     String studentID;  
-    float averageMarks; // declaring variables  
+    float avgMarks; // declaring variables  
 }
  // Declaring a constructor to create a student object
  Student(String name, String stuID, float avgMarks) {
-            
+              this.name = name;         //Assigining the parameter to the student name
+    this.studentID = studentID;        //Assigining the parameter to the student ID
+    this.avgMarks = avgMarks;  //Assigining the parameter to the average marks
         }
     }
 }
