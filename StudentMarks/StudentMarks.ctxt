@@ -16,4 +16,6 @@ comment7.params=marks\ marksCount
 comment7.target=double\ CalMean(float[],\ int[])
 comment8.params=marks\ marksCount\ mean
 comment8.target=double\ CalStandardDeviation(float[],\ int[],\ double)
-numComments=9
+comment9.params=names\ studentIDs\ totalMarks\ marksCount\ threshold
+comment9.target=void\ StudentsThreshold(java.lang.String[],\ java.lang.String[],\ float[],\ int[],\ float)
+numComments=10
