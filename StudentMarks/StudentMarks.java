@@ -168,6 +168,8 @@ public class StudentMarks
     System.out.println("Lowest Average Mark: " + minMark);
 }
   private static void MeanAndStandardDeviation(float[] totalMarks, int[] marksCount) {
+      double mean = CalMean(totalMarks, marksCount);//Calling Calmean method and assigning it to the variable
+         System.out.println("\nMean: " + mean);
  
     }
   
