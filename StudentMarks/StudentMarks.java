@@ -250,7 +250,7 @@ private static void bubbleSort(Student[] students, int n) {//sorting students ba
     // Perform one pass of bubble sort
     for (int i = 0; i < n - 1; i++) {// creating a for loop to sort the data
           if (students[i].averageMarks < students[i + 1].averageMarks) { // swap the value if the current value is less than the next value
-              
+              Student = students[i];  //creating temporary variable to hold the current value of the student
             }
     }
 }
