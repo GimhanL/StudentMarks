@@ -54,7 +54,7 @@ public class StudentMarks
                     StudentsThreshold(names,stuID,totalMarks,marksCount,threshold); 
                     break;
                 case 5:
-                   System.out.println("Menu choice 5"); 
+                   Top5Students(names, stuID, totalMarks, marksCount);
                     break;
                 default:
                     System.out.println("Invalid choice."); 
@@ -216,21 +216,11 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
         }
         
     }
+}
     
     private static void Top5Students(String[] names,String[] stuID, float[] totalMarks,int[] marksCount) {
         
-private static class Student {// adding  inner class to store student details
-    String name;        
-    String studentID;  
-    float avgMarks; // declaring variables  
 
- // Declaring a constructor to create a student object
- Student(String name, String stuID, float avgMarks) {
-              this.name = name;         //Assigining the parameter to the student name
-    this.studentID = studentID;        //Assigining the parameter to the student ID
-    this.avgMarks = avgMarks;  //Assigining the parameter to the average marks
-        }
-    }
     //Creating an array to store student objects
     Student[] students = new Student[100];
     int count = 0;  //making count variable to 0
@@ -238,15 +228,31 @@ private static class Student {// adding  inner class to store student details
      for (int i = 0; i < names.length && names[i] != null; i++) {//Creating a for loop to get the student data to the student array 
         
          float avgMarks = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;//Calculating the average mark to the current student
-        students[count++] = new Student(names[i], studentIDs[i], avgMarks);//Creating a student object and assigning it to the array
+        students[count++] = new Student(names[i], stuID[i], avgMarks);//Creating a student object and assigning it to the array
         }
     // sorting the students array by average marks in descending order
     bubbleSort(students, count);
-        
+         
+      // Displaying the highest average marks fot top 5 students
+        System.out.println("\nThe Top 5 Students with Highest Average Marks!");
+        for (int i = 0; i < 5 && i < count; i++) {//For loop to get the five marks
+            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].avgMarks);
+        }
 
 }
 
+private static class Student {// adding  inner class to store student details
+    String name;        
+    String stuID;  
+    float avgMarks; // declaring variables  
 
+ // Declaring a constructor to create a student object
+ Student(String name, String stuID, float avgMarks) {
+              this.name = name;         //Assigining the parameter to the student name
+    this.stuID = stuID;        //Assigining the parameter to the student ID
+    this.avgMarks = avgMarks;  //Assigining the parameter to the average marks
+        }
+    }
 
 
 private static void bubbleSort(Student[] students, int n) {//sorting students based on the average marks using bubble sort
@@ -254,7 +260,7 @@ private static void bubbleSort(Student[] students, int n) {//sorting students ba
     if (n == 1) return;
     // Perform one pass of bubble sort
     for (int i = 0; i < n - 1; i++) {// creating a for loop to sort the data
-          if (students[i].averageMarks < students[i + 1].averageMarks) { // swap the value if the current value is less than the next value
+          if (students[i].avgMarks < students[i + 1].avgMarks) { // swap the value if the current value is less than the next value
               Student temp = students[i];  //creating temporary variable to hold the current value of the student
               students[i] = students[i + 1];//swapping the stunt with the next student
                students[i + 1] = temp;// assigning the temporary variable to the next student
