@@ -207,7 +207,10 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
     private static void StudentsThreshold(String[] names, String[] studentIDs, float[] totalMarks, int[] marksCount, float threshold) {
     for (int i = 0; i < names.length && names[i] != null; i++) {//adding a for loop to get the student details
         float averageMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;  // Calculating the average marks for the current student
-    
+        // using a if condition to check  the average marks are below the threshold
+        if (averageMark < threshold) {
+        }
+        
     }
 }
 }
