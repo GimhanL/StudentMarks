@@ -180,6 +180,7 @@ public class StudentMarks
                     count++;
                 }
             }
+               return count > 0 ? total / count : 0;// returning mean if the count is greater than 0
 
 }
 

@@ -12,4 +12,6 @@ comment5.params=totalMarks\ marksCount
 comment5.target=void\ HighAndLowMarks(float[],\ int[])
 comment6.params=totalMarks\ marksCount
 comment6.target=void\ MeanAndStandardDeviation(float[],\ int[])
-numComments=7
+comment7.params=marks\ marksCount
+comment7.target=double\ CalMean(float[],\ int[])
+numComments=8
