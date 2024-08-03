@@ -236,7 +236,8 @@ private static class Student {// adding  inner class to store student details
     int count = 0;  //making count variable to 0
     
      for (int i = 0; i < names.length && names[i] != null; i++) {//Creating a for loop to get the student data to the student array 
-         
+        
+         float avgMarks = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0;//Calculating the average mark to the current student
         }
 
 }
