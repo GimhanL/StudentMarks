@@ -193,8 +193,10 @@ private static double CalStandardDeviation(float[] marks, int[] marksCount, doub
                      double averageMark = marks[i] / marksCount[i];//calculating average marks from the current student
                      double differenceFromMean = averageMark - mean;//calculating difference bitwwen average mark and the mean
                      totalOfSquares += differenceFromMean * differenceFromMean;//Adding the diffference to the total of squares
+                     count++;
                 }
         }
+        double varianceVal = count > 0 ? totalOfSquares / count : 0;// Calculating variance
 
     }
 
