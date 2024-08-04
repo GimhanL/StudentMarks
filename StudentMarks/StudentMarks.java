@@ -77,6 +77,11 @@ public class StudentMarks {
         try {
             Scanner fileScanner = new Scanner(new File(filePath)); //Creating a Scanner object to read the file
             int index = 0; //Adding the index for storing data in arrays
+            // Read the value and print the unit name
+            while (fileScanner.hasNextLine()) {
+            
+            
+            }
             //Creating while loop to read the text file lines
             while (fileScanner.hasNextLine() && index < 100) {
                 String data = fileScanner.nextLine().trim(); //Read data in the line and removing whitespace
@@ -87,7 +92,7 @@ public class StudentMarks {
                 }
                 //Adding commas to the data
                 String[] slots = data.split(",");
-                if (slots.length > 4) { //Validation if the array has more than 3 element it will coninue
+                if (slots.length > 4) { //Validation if the array has more than 4 element it will coninue
                     String studentID = slots[0].trim(); //Assign StudentID data to slots array
                     String name = slots[1].trim() + " " + slots[0].trim(); //Adding last name and first name to the slots array
                     String a1 = slots[2].trim();
@@ -220,7 +225,7 @@ public class StudentMarks {
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
         boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
         for (int i = 0; i < names.length && names[i] != null; i++) { //Adding a for loop to get the student details
-            if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negetive
+            if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negative
             // Calculating the average marks for the current student
             float averageMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; 
             //Using a if condition to check the average marks are below the threshold
