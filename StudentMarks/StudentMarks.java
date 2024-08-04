@@ -26,7 +26,7 @@ public class StudentMarks {
         //Importing the text file
         String filePath = "prog5001_students_grade_2022.txt";
 
-        readDataFromFile(filePath, names, stuID, totalMarks, marksCount); // Calling method to read the file
+        readDataFromFile(filePath, names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); // Calling method to read the file
 
         //Checking the text document values are showing in the text document
         /* for (int i = 0; i < names.length && names[i] != null; i++) {
@@ -43,8 +43,8 @@ public class StudentMarks {
 
             try {
                 int number = inputScanner.nextInt(); //Getting the input value
-                if (number < 1 || number > 5) { // Checking if the input number 1 to 5 in the main menu
-                    System.out.println("Invalid Number! Please enter a number between 1 and 5.");
+                if (number < 1 || number > 3) { // Checking if the input number 1 to 5 in the main menu
+                    System.out.println("Invalid Number! Please enter a number between 1 and 3");
                     continue;
                 }
 
@@ -70,7 +70,7 @@ public class StudentMarks {
         }
     }
 
-    private static void readDataFromFile(String filePath, String[] names, String[] stuID, float[] totalMarks, int[] marksCount) {
+    private static void readDataFromFile(String filePath, String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float[] assignment1Marks, float[] assignment2Marks, float[] assignment3Marks) {
         try {
             Scanner fileScanner = new Scanner(new File(filePath)); //Creating a Scanner object to read the file
             int index = 0; //Adding the index for storing data in arrays
@@ -108,24 +108,17 @@ public class StudentMarks {
                     //Making current student marksCount mark as 0
                     marksCount[index] = 0;
 
-                    //Creating a for loop to get marks values after 3rd array slot
-                    for (int i = 3; i < slots.length; i++) {
-                        try {
-                            //Checking for whitspace
-                            if (!slots[i].trim().isEmpty()) {
-                                //Adding mark to total marks
-                                totalMarks[index] += Float.parseFloat(slots[i].trim());
-                                //Adding the marks for the student
-                                marksCount[index]++;
-                            }
-                            //If the value isn't a number throws a error 
+                    try{
+                        //Pass if there is value and if the value is empty assign 0
+                         assignment1Marks[index] = !slots[3].trim().isEmpty() ? Float.parseFloat(slots[3].trim()) : 0;
+                    
                         } catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark: " + slots[i]);
+                            System.out.println("Skipping invalid mark for assignment 1: " + slots[3]);//Displaying error message
                         }
                     }
 
                     index++;
-                }
+                
             }
             //Close the file scanner
             fileScanner.close();
