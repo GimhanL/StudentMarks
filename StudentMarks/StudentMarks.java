@@ -36,7 +36,14 @@ public class StudentMarks
         // Menu choices
         while (true) {
             menu(); // Displaying the menu 
-            int number = inputScanner.nextInt(); // getting the input value
+         
+            try {
+                int number = inputScanner.nextInt();// getting the input value
+                if (number < 1 || number > 5) {// Checking if the input number 1 to 5 in the main menu
+                    System.out.println("Invalid Number! Please enter a number between 1 and 5.");
+                    continue;
+                }
+            
 
             switch (number) {
                 case 1:
