@@ -81,8 +81,8 @@ public class StudentMarks {
             while (fileScanner.hasNextLine()) {
             String name = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
              if (!name.isEmpty()) { //Adding a if condition to check if the line is not empty
-                 
-                 
+                System.out.println(name);
+                break; //After printing the unit name exit the loop
                 }
             }
             //Creating while loop to read the text file lines
