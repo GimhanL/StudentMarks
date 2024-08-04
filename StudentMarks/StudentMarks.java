@@ -132,7 +132,10 @@ public class StudentMarks
             }catch(FileNotFoundException e){
                 // if the file is not detectable it will shows the error
                 System.out.println("File not found!");
-            }
+            }catch (Exception e) { // Handling genaral issues when reading the file
+   
+    System.out.println("An error occurred while reading the file: " + e.getMessage());
+}
         }
         
     // Method to display the menu
