@@ -95,10 +95,7 @@ public class StudentMarks {
                 if (slots.length > 4) { //Validation if the array has more than 4 element it will coninue
                     String studentID = slots[2].trim(); //Assign StudentID data to slots array
                     String name = slots[1].trim() + " " + slots[0].trim(); //Adding last name and first name to the slots array
-                    String a1 = slots[3].trim();
-                    String a2 = slots[4].trim();
-                    String a3 = slots[5].trim();
-
+    
                     //Storing student ID
                     stuID[index] = studentID;
                     //Storing student name
@@ -183,21 +180,21 @@ public class StudentMarks {
    
 
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
-        boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
+       // boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
         for (int i = 0; i < names.length && names[i] != null; i++) { //Adding a for loop to get the student details
-            if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negative
+             if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0)  { //Checking name and student ID are not null and mark count and mark total are not negative
             //Using a if condition to check the total marks are below the threshold
             if (totalMarks[i] < threshold) {
-                markFound = true;
+                //markFound = true;
                 //Printing the marks
-                System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Total Marks: " + totalMarks);
+                System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Total Marks: " + totalMarks[i]);
             }
 
         }
         //If there is no student below the threshold it will show the error
-       if (!markFound) {
-        System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
-      }
+      // if (!markFound) {
+        //.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
+      //}
     }
 }
 
