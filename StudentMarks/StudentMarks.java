@@ -202,11 +202,11 @@ public class StudentMarks {
             }
 
         }
-        //If there is no student below the threshold it will show the error
+    }
+      //If there is no student below the threshold it will show the error
        if (!markFound) {
         System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
       }
-    }
 }
 
     private static void Top5Students(String[] names, String[] stuID, float[] totalMarks, int[] marksCount) {
