@@ -51,7 +51,7 @@ public class StudentMarks {
 
                 switch (number) {
                     case 1:
-                        AllStudentsAvg(names, stuID, totalMarks, marksCount); //Display all students
+                        AllStudents(names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); //Display all students
                         break;
                     case 2:
                         System.out.print("Please enter the mark threshold that you want to check : ");
@@ -170,11 +170,12 @@ public class StudentMarks {
         System.out.print("Please write the number that you want to select? ");
     }
     //Display all student with average marks
-    private static void AllStudentsAvg(String[] names, String[] stuID, float[] totalMarks, int[] marksCount) {
+    private static void AllStudents(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float[] assignment1Marks, float[] assignment2Marks, float[] assignment3Marks) {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
             float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; // Calculating average marks for all students
-            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] +", Average Marks: " + avgMark);
+            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] +", Assignment 1 marks: " + assignment1Marks[i] + ", Assignment 2 marks: " + assignment2Marks[i] + ", Assignment 3 marks: " + assignment3Marks[i] + 
+            ", Total Marks: " + totalMarks[i] + ", Average Marks: " + avgMark);
 
         }
 
