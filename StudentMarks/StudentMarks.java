@@ -119,10 +119,34 @@ public class StudentMarks {
                         } catch (NumberFormatException e) {
                             System.out.println("Skipping invalid mark for assignment 1: " + slots[3]);//Displaying error message
                         }
-                    }
-
+                    
+                      try{
+                        //Pass if there is value and if the value is empty assign 0
+                         assignment2Marks[index] = !slots[4].trim().isEmpty() ? Float.parseFloat(slots[4].trim()) : 0;
+                        //Adding assignemnt 1 mark to total marks
+                        totalMarks[index] += assignment2Marks[index];
+                        //Adding the marks
+                         marksCount[index]++;
+                    
+                        } catch (NumberFormatException e) {
+                            System.out.println("Skipping invalid mark for assignment 2: " + slots[4]);//Displaying error message
+                        }
+                    
+                      try{
+                        //Pass if there is value and if the value is empty assign 0
+                         assignment3Marks[index] = !slots[5].trim().isEmpty() ? Float.parseFloat(slots[5].trim()) : 0;
+                        //Adding assignemnt 1 mark to total marks
+                        totalMarks[index] += assignment3Marks[index];
+                        //Adding the marks
+                         marksCount[index]++;
+                    
+                        } catch (NumberFormatException e) {
+                            System.out.println("Skipping invalid mark for assignment 1: " + slots[5]);//Displaying error message
+                        }
+                    
+                    
                     index++;
-                
+                }
             }
             //Close the file scanner
             fileScanner.close();
