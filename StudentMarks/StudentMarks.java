@@ -220,6 +220,7 @@ public class StudentMarks {
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
         boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
         for (int i = 0; i < names.length && names[i] != null; i++) { //Adding a for loop to get the student details
+            if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negetive
             // Calculating the average marks for the current student
             float averageMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; 
             //Using a if condition to check the average marks are below the threshold
@@ -235,6 +236,7 @@ public class StudentMarks {
         System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
       }
     }
+}
 
     private static void Top5Students(String[] names, String[] stuID, float[] totalMarks, int[] marksCount) {
 
