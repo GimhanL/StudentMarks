@@ -78,9 +78,9 @@ public class StudentMarks {
             while (fileScanner.hasNextLine()) {
                 String unitName = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
                 if (!unitName.isEmpty()) { //Adding a if condition to check if the line is not empty
-                System.out.println("***************************************");
+                System.out.println("=======================================");
                 System.out.println("    " + unitName + "   ");
-                System.out.println("***************************************");
+                System.out.println("=======================================");
                     break; //After printing the unit name exit the loop
                 }
             }
@@ -171,7 +171,9 @@ public class StudentMarks {
 
     //Method to display the menu
     private static void menu() {
-        System.out.println("\n_____________________Menu_____________________");
+        System.out.println("\n***************************************");
+        System.out.println("                 Menu                ");
+        System.out.println("***************************************");
         System.out.println();
         System.out.println("1.Display all students and their average grade");
         System.out.println("2.Display students that below the threshold");
