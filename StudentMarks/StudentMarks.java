@@ -111,6 +111,10 @@ public class StudentMarks {
                     try{
                         //Pass if there is value and if the value is empty assign 0
                          assignment1Marks[index] = !slots[3].trim().isEmpty() ? Float.parseFloat(slots[3].trim()) : 0;
+                        //Adding assignemnt 1 mark to total marks
+                        totalMarks[index] += assignment1Marks[index];
+                        //Adding the marks
+                         marksCount[index]++;
                     
                         } catch (NumberFormatException e) {
                             System.out.println("Skipping invalid mark for assignment 1: " + slots[3]);//Displaying error message
