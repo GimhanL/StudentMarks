@@ -180,21 +180,21 @@ public class StudentMarks {
    
 
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
-       // boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
+        boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
         for (int i = 0; i < names.length && names[i] != null; i++) { //Adding a for loop to get the student details
-             if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0)  { //Checking name and student ID are not null and mark count and mark total are not negative
+            if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negative
             //Using a if condition to check the total marks are below the threshold
             if (totalMarks[i] < threshold) {
-                //markFound = true;
+                markFound = true;
                 //Printing the marks
                 System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Total Marks: " + totalMarks[i]);
             }
 
         }
         //If there is no student below the threshold it will show the error
-      // if (!markFound) {
-        //.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
-      //}
+       if (!markFound) {
+        System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
+      }
     }
 }
 
@@ -207,9 +207,8 @@ public class StudentMarks {
 
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a for loop to get the student data to the student array 
             
-            //Calculating the average mark to the current student 
-            float avgMarks = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; 
-            students[count++] = new Student(names[i], stuID[i], avgMarks); //Creating a student object and assigning it to the array
+          
+            students[count++] = new Student(names[i], stuID[i], totalMarks[i]); //Creating a student object and assigning it to the array
         }
         //Sorting the students array by average marks in descending order
         bubbleSort(students, count);
