@@ -106,8 +106,12 @@ public class StudentMarks {
                     marksCount[index] = 0;
 
                     try{
-                        //Pass if there is value and if the value is empty assign 0
+                        if (slots.length > 3 && !slots[3].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
+                        //Passing if there is value 
                          assignment1Marks[index] = !slots[3].trim().isEmpty() ? Float.parseFloat(slots[3].trim()) : 0;
+                        }else{
+                             assignment1Marks[index] = 0;//If the value is empty assign 0
+                        }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment1Marks[index];
                         //Adding the marks
@@ -118,27 +122,34 @@ public class StudentMarks {
                         }
                     
                       try{
-                        //Pass if there is value and if the value is empty assign 0
+                        if (slots.length > 4 && !slots[4].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
+                        //Passing if there is value 
                          assignment2Marks[index] = !slots[4].trim().isEmpty() ? Float.parseFloat(slots[4].trim()) : 0;
+                        }else{
+                             assignment2Marks[index] = 0;//If the value is empty assign 0
+                        }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment2Marks[index];
                         //Adding the marks
                          marksCount[index]++;
-                    
                         } catch (NumberFormatException e) {
                             System.out.println("Skipping invalid mark for assignment 2: " + slots[4]);//Displaying error message
                         }
                     
                       try{
-                        //Pass if there is value and if the value is empty assign 0
+                        if (slots.length > 5 && !slots[5].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
+                        //Passing if there is value 
                          assignment3Marks[index] = !slots[5].trim().isEmpty() ? Float.parseFloat(slots[5].trim()) : 0;
+                        }else{
+                             assignment3Marks[index] = 0;//If the value is empty assign 0
+                        }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment3Marks[index];
                         //Adding the marks
                          marksCount[index]++;
                     
                         } catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark for assignment 1: " + slots[5]);//Displaying error message
+                            System.out.println("Skipping invalid mark for assignment 3: " + slots[5]);//Displaying error message
                         }
                     
                     
