@@ -76,9 +76,11 @@ public class StudentMarks {
             int index = 0; //Adding the index for storing data in arrays
             // Read the value and print the unit name
             while (fileScanner.hasNextLine()) {
-                String name = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
-                if (!name.isEmpty()) { //Adding a if condition to check if the line is not empty
-                    System.out.println(name);
+                String unitName = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
+                if (!unitName.isEmpty()) { //Adding a if condition to check if the line is not empty
+                System.out.println("***************************************");
+                System.out.println("    " + unitName + "   ");
+                System.out.println("***************************************");
                     break; //After printing the unit name exit the loop
                 }
             }
