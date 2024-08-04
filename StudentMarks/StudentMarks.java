@@ -232,7 +232,7 @@ public class StudentMarks {
         float totalMarks; //Declaring variables  
 
         //Declaring a constructor to create a student object
-        Student(String name, String stuID, float avgMarks) {
+        Student(String name, String stuID, float totalMarks) {
             this.name = name; //Assigining the parameter to the student name
             this.stuID = stuID; //Assigining the parameter to the student ID
             this.totalMarks = totalMarks; //Assigining the parameter to the total marks
@@ -244,7 +244,7 @@ public class StudentMarks {
         //End recursion if only one element 
         if (n == 1) return;
         for (int i = 0; i < n - 1; i++) { //Creating a for loop to sort the data
-            if (students[i].avgMarks < students[i + 1].avgMarks) { //Swap the value if the current value is less than the next value
+            if (students[i].totalMarks < students[i + 1].totalMarks) { //Swap the value if the current value is less than the next value
                 Student temp = students[i]; //Creating temporary variable to hold the current value of the student
                 students[i] = students[i + 1]; //Swapping the stunt with the next student
                 students[i + 1] = temp; //Assigning the temporary variable to the next student
