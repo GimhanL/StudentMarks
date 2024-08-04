@@ -213,15 +213,15 @@ public class StudentMarks {
         //Sorting the students array by average marks in descending order
         bubbleSort(students, count);
 
-        //Displaying the highest average marks fot top 5 students
-        System.out.println("\nThe Top 5 Students with Highest Average Marks!");
+        //Displaying the highest total marks fot top 5 students
+        System.out.println("\nThe Top 5 Students with Highest Total Marks!");
         for (int i = 0; i < 5 && i < count; i++) { //For loop to get the five marks
-            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].avgMarks);
+            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Total Marks: " + students[i].totalMarks);
         }
         //Displaying the lowest average marks fot top 5 students
         System.out.println("\nThe Top 5 Students with Lowest Average Marks:");
         for (int i = count - 1; i >= Math.max(0, count - 5); i--) { // starting out the loop with lowest average marks
-            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].avgMarks);
+            System.out.println("Student Name: " + students[i].name + ", Student ID: " + students[i].stuID + ", Average Marks: " + students[i].totalMarks);
         }
 
     }
@@ -229,13 +229,13 @@ public class StudentMarks {
     private static class Student { //Adding  inner class to store student details
         String name;
         String stuID;
-        float avgMarks; //Declaring variables  
+        float totalMarks; //Declaring variables  
 
         //Declaring a constructor to create a student object
         Student(String name, String stuID, float avgMarks) {
             this.name = name; //Assigining the parameter to the student name
             this.stuID = stuID; //Assigining the parameter to the student ID
-            this.avgMarks = avgMarks; //Assigining the parameter to the average marks
+            this.totalMarks = totalMarks; //Assigining the parameter to the total marks
         }
     }
 
