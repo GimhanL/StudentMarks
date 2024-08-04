@@ -8,6 +8,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 public class StudentMarks
 {
     public static void main(String[] args) {
@@ -63,9 +65,12 @@ public class StudentMarks
                 case 5:
                    Top5Students(names, stuID, totalMarks, marksCount);
                     break;
-                default:
-                    System.out.println("Invalid choice."); 
+                }
+            }catch (InputMismatchException e) {//checking if the input is integer
+                System.out.println("Invalid input. Please enter a number.");
+                inputScanner.next(); 
             }
+            
         }
     }
     
