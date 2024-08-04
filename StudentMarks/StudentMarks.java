@@ -51,17 +51,11 @@ public class StudentMarks {
                         AllStudentsAvg(names, stuID, totalMarks, marksCount); //Display all students
                         break;
                     case 2:
-                        HighAndLowMarks(totalMarks, marksCount); //Display lowest and highest marks
-                        break;
-                    case 3:
-                        MeanAndStandardDeviation(totalMarks, marksCount);
-                        break;
-                    case 4:
                         System.out.print("Please enter the mark threshold that you want to check : ");
                         float threshold = inputScanner.nextFloat(); //Psssing the threshold value to the variable 
                         StudentsThreshold(names, stuID, totalMarks, marksCount, threshold);
                         break;
-                    case 5:
+                    case 3:
                         Top5Students(names, stuID, totalMarks, marksCount);
                         break;
                 }
@@ -96,11 +90,11 @@ public class StudentMarks {
                 //Adding commas to the data
                 String[] slots = data.split(",");
                 if (slots.length > 4) { //Validation if the array has more than 4 element it will coninue
-                    String studentID = slots[0].trim(); //Assign StudentID data to slots array
+                    String studentID = slots[2].trim(); //Assign StudentID data to slots array
                     String name = slots[1].trim() + " " + slots[0].trim(); //Adding last name and first name to the slots array
-                    String a1 = slots[2].trim();
-                    String a2 = slots[3].trim();
-                    String a3 = slots[4].trim();
+                    String a1 = slots[3].trim();
+                    String a2 = slots[4].trim();
+                    String a3 = slots[5].trim();
 
                     //Storing student ID
                     stuID[index] = studentID;
@@ -146,10 +140,8 @@ public class StudentMarks {
         System.out.println("\n_____________________Menu_____________________");
         System.out.println();
         System.out.println("1.Display all students and their average grade");
-        System.out.println("2.Display highest and lowest marks");
-        System.out.println("3.Display mean and standard deviation");
-        System.out.println("4.Display students that below the threshold");
-        System.out.println("5.Display top 5 students with highest and lowest average marks");
+        System.out.println("2.Display students that below the threshold");
+        System.out.println("3.Display top 5 students with highest and lowest marks");
         System.out.println();
         System.out.print("Please write the number that you want to select? ");
     }
@@ -158,72 +150,12 @@ public class StudentMarks {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
             float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; // Calculating average marks for all students
-            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] + ", Average Marks: " + avgMark);
+            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] +", Average Marks: " + avgMark);
 
         }
 
     }
-    private static void HighAndLowMarks(float[] totalMarks, int[] marksCount) {
-
-        float maxMark = Float.MIN_VALUE;//Assigning minimum mark value to the variable
-        float minMark = Float.MAX_VALUE;//Assiging max mark value to the variable
-
-        //Find the minimum mark and maximum mark using for loop
-        for (int i = 0; i < totalMarks.length && totalMarks[i] != 0; i++) {
-            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; //if the mark count greater than 0 it will be true and  and dvide the marks
-            if (avgMark > maxMark) {
-                maxMark = avgMark; //If the average mark is higher it will update the max mark 
-
-            }
-            if (avgMark < minMark && avgMark > 0) {
-                minMark = avgMark; //If the average mark is lower it will update the min mark 
-
-            }
-
-        }
-
-
-        //Printing out the marks
-        System.out.println("Average max mark: " + maxMark);
-        System.out.println("Lowest Average Mark: " + minMark);
-    }
-    private static void MeanAndStandardDeviation(float[] totalMarks, int[] marksCount) {
-        double mean = CalMean(totalMarks, marksCount); //Calling Calmean method and assigning it to the variable
-        double standardDeviation = CalStandardDeviation(totalMarks, marksCount, mean); //Calling CalStandardDeviation method and assigning it to the variable
-
-        System.out.println("\nMean: " + mean);
-        System.out.println("Standard Deviation: " + standardDeviation);
-
-    }
-
-    private static double CalMean(float[] marks, int[] marksCount) {
-        double total = 0; //Making total to 0
-        int count = 0; //Making count 0
-        for (int i = 0; i < marks.length && marks[i] != 0; i++) { //Creating a for loop
-            if (marksCount[i] > 0) { //If any mark value is greater than 0 it will continue
-                total += marks[i] / marksCount[i]; //getting average marks by dividing the total marks
-                count++;
-            }
-        }
-        return count > 0 ? total / count : 0; // returning mean if the count is greater than 0
-
-    }
-    private static double CalStandardDeviation(float[] marks, int[] marksCount, double mean) {
-        double totalOfSquares = 0; //Making total to 0
-        int count = 0; //Making count 0
-        for (int i = 0; i < marks.length && marks[i] != 0; i++) { //Creating a for loop
-            if (marksCount[i] > 0) { //If any mark value is greater than 0 it will continue
-                //Calculating average marks from the current student
-                double averageMark = marks[i] / marksCount[i]; 
-                double differenceFromMean = averageMark - mean; //Calculating difference bitwwen average mark and the mean
-                totalOfSquares += differenceFromMean * differenceFromMean; //Adding the diffference to the total of squares
-                count++;
-            }
-        }
-        double varianceVal = count > 0 ? totalOfSquares / count : 0; // Calculating variance
-        return Math.sqrt(varianceVal); //Calculating standard deviation and return
-
-    }
+   
 
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
         boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
