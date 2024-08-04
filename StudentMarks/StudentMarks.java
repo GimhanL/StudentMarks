@@ -79,8 +79,11 @@ public class StudentMarks {
             int index = 0; //Adding the index for storing data in arrays
             // Read the value and print the unit name
             while (fileScanner.hasNextLine()) {
-            
-            
+            String name = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
+             if (!name.isEmpty()) { //Adding a if condition to check if the line is not empty
+                 
+                 
+                }
             }
             //Creating while loop to read the text file lines
             while (fileScanner.hasNextLine() && index < 100) {
