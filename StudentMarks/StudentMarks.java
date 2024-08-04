@@ -76,10 +76,10 @@ public class StudentMarks {
             int index = 0; //Adding the index for storing data in arrays
             // Read the value and print the unit name
             while (fileScanner.hasNextLine()) {
-            String name = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
-             if (!name.isEmpty()) { //Adding a if condition to check if the line is not empty
-                System.out.println(name);
-                break; //After printing the unit name exit the loop
+                String name = fileScanner.nextLine().trim(); //Read the next line and remove any whitespace
+                if (!name.isEmpty()) { //Adding a if condition to check if the line is not empty
+                    System.out.println(name);
+                    break; //After printing the unit name exit the loop
                 }
             }
             //Creating while loop to read the text file lines
@@ -95,7 +95,7 @@ public class StudentMarks {
                 if (slots.length > 4) { //Validation if the array has more than 4 element it will coninue
                     String studentID = slots[2].trim(); //Assign StudentID data to slots array
                     String name = slots[1].trim() + " " + slots[0].trim(); //Adding last name and first name to the slots array
-    
+
                     //Storing student ID
                     stuID[index] = studentID;
                     //Storing student name
@@ -105,54 +105,54 @@ public class StudentMarks {
                     //Making current student marksCount mark as 0
                     marksCount[index] = 0;
 
-                    try{
+                    try {
                         if (slots.length > 3 && !slots[3].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
-                        //Passing if there is value 
-                         assignment1Marks[index] = !slots[3].trim().isEmpty() ? Float.parseFloat(slots[3].trim()) : 0;
-                        }else{
-                             assignment1Marks[index] = 0;//If the value is empty assign 0
+                            //Passing if there is value 
+                            assignment1Marks[index] = !slots[3].trim().isEmpty() ? Float.parseFloat(slots[3].trim()) : 0;
+                        } else {
+                            assignment1Marks[index] = 0; //If the value is empty assign 0
                         }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment1Marks[index];
                         //Adding the marks
-                         marksCount[index]++;
-                    
-                        } catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark for assignment 1: " + slots[3]);//Displaying error message
-                        }
-                    
-                      try{
+                        marksCount[index]++;
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("Skipping invalid mark for assignment 1: " + slots[3]); //Displaying error message
+                    }
+
+                    try {
                         if (slots.length > 4 && !slots[4].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
-                        //Passing if there is value 
-                         assignment2Marks[index] = !slots[4].trim().isEmpty() ? Float.parseFloat(slots[4].trim()) : 0;
-                        }else{
-                             assignment2Marks[index] = 0;//If the value is empty assign 0
+                            //Passing if there is value 
+                            assignment2Marks[index] = !slots[4].trim().isEmpty() ? Float.parseFloat(slots[4].trim()) : 0;
+                        } else {
+                            assignment2Marks[index] = 0; //If the value is empty assign 0
                         }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment2Marks[index];
                         //Adding the marks
-                         marksCount[index]++;
-                        } catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark for assignment 2: " + slots[4]);//Displaying error message
-                        }
-                    
-                      try{
+                        marksCount[index]++;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Skipping invalid mark for assignment 2: " + slots[4]); //Displaying error message
+                    }
+
+                    try {
                         if (slots.length > 5 && !slots[5].trim().isEmpty()) { //Checking if array slots length is greater than 3 and the value is not empty
-                        //Passing if there is value 
-                         assignment3Marks[index] = !slots[5].trim().isEmpty() ? Float.parseFloat(slots[5].trim()) : 0;
-                        }else{
-                             assignment3Marks[index] = 0;//If the value is empty assign 0
+                            //Passing if there is value 
+                            assignment3Marks[index] = !slots[5].trim().isEmpty() ? Float.parseFloat(slots[5].trim()) : 0;
+                        } else {
+                            assignment3Marks[index] = 0; //If the value is empty assign 0
                         }
                         //Adding assignemnt 1 mark to total marks
                         totalMarks[index] += assignment3Marks[index];
                         //Adding the marks
-                         marksCount[index]++;
-                    
-                        } catch (NumberFormatException e) {
-                            System.out.println("Skipping invalid mark for assignment 3: " + slots[5]);//Displaying error message
-                        }
-                    
-                    
+                        marksCount[index]++;
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("Skipping invalid mark for assignment 3: " + slots[5]); //Displaying error message
+                    }
+
+
                     index++;
                 }
             }
@@ -182,32 +182,32 @@ public class StudentMarks {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
             float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; // Calculating average marks for all students
-            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] +", Assignment 1 marks: " + assignment1Marks[i] + ", Assignment 2 marks: " + assignment2Marks[i] + ", Assignment 3 marks: " + assignment3Marks[i] + 
-            ", Total Marks: " + totalMarks[i] + ", Average Marks: " + avgMark);
+            System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] + ", Assignment 1 marks: " + assignment1Marks[i] + ", Assignment 2 marks: " + assignment2Marks[i] + ", Assignment 3 marks: " + assignment3Marks[i] +
+                ", Total Marks: " + totalMarks[i] + ", Average Marks: " + avgMark);
 
         }
 
     }
-   
+
 
     private static void StudentsThreshold(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float threshold) {
         boolean markFound = false; //Using true and false method to check if the students meets the threshold mark
         for (int i = 0; i < names.length && names[i] != null; i++) { //Adding a for loop to get the student details
             if (names[i] != null && stuID[i] != null && marksCount[i] >= 0 && totalMarks[i] >= 0) { //Checking name and student ID are not null and mark count and mark total are not negative
-            //Using a if condition to check the total marks are below the threshold
-            if (totalMarks[i] < threshold) {
-                markFound = true;
-                //Printing the marks
-                System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Total Marks: " + totalMarks[i]);
-            }
+                //Using a if condition to check the total marks are below the threshold
+                if (totalMarks[i] < threshold) {
+                    markFound = true;
+                    //Printing the marks
+                    System.out.println("Student Name: " + names[i] + ",ID: " + stuID[i] + ",Total Marks: " + totalMarks[i]);
+                }
 
+            }
+        }
+        //If there is no student below the threshold it will show the error
+        if (!markFound) {
+            System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
         }
     }
-      //If there is no student below the threshold it will show the error
-       if (!markFound) {
-        System.out.println("Sorry! There is no student below the threshold mark of  " + threshold);
-      }
-}
 
     private static void Top5Students(String[] names, String[] stuID, float[] totalMarks, int[] marksCount) {
 
@@ -217,8 +217,8 @@ public class StudentMarks {
         int count = 0; //Making count variable to 0
 
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a for loop to get the student data to the student array 
-            
-          
+
+
             students[count++] = new Student(names[i], stuID[i], totalMarks[i]); //Creating a student object and assigning it to the array
         }
         //Sorting the students array by average marks in descending order
