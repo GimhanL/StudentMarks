@@ -19,6 +19,9 @@ public class StudentMarks {
         String[] stuID = new String[100];
         float[] totalMarks = new float[100];
         int[] marksCount = new int[100];
+        float[] assignment1Marks = new float[100];
+        float[] assignment2Marks = new float[100];
+        float[] assignment3Marks = new float[100];
 
         //Importing the text file
         String filePath = "prog5001_students_grade_2022.txt";
