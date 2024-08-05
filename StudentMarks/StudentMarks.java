@@ -26,6 +26,9 @@ public class StudentMarks {
         
         //Declaring variable for file path
         String filePath;
+        //Creating a loop until the correct path has been entered
+        while (true) {
+        }
 
         //Importing the text file
         readDataFromFile(filePath, names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); // Calling method to read the file
