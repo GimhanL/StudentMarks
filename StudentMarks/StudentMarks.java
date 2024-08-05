@@ -53,11 +53,15 @@ public class StudentMarks {
                     case 1:
                         AllStudents(names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); //Display all students
                         break;
-                    case 2:
+                    case 2:    
                         System.out.print("Please enter the mark threshold that you want to check : ");
                         float threshold = inputScanner.nextFloat(); //Psssing the threshold value to the variable 
-                        StudentsThreshold(names, stuID, totalMarks, marksCount, threshold);
-                        break;
+                        if(threshold >999){//Adding a if condition to allow only 3 digits numbers
+                       System.out.println("Invalid input! Please enter 3 digit number ");
+                        }else{
+                             StudentsThreshold(names, stuID, totalMarks, marksCount, threshold);
+                        }
+                         break;
                     case 3:
                         Top5Students(names, stuID, totalMarks, marksCount);
                         break;
@@ -242,9 +246,9 @@ public class StudentMarks {
     }
 
     private static class Student { //Adding  inner class to store student details
-        String name;
-        String stuID;
-        float totalMarks; //Declaring variables  
+        private String name;
+        private String stuID;
+        private float totalMarks; //Declaring variables and adding access control to variables  
 
         //Declaring a constructor to create a student object
         Student(String name, String stuID, float totalMarks) {
