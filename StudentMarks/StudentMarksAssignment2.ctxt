@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.target=StudentMarks
+comment0.target=StudentMarksAssignment2
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=filePath\ names\ stuID\ totalMarks\ marksCount\ assignment1Marks\ assignment2Marks\ assignment3Marks
@@ -13,5 +13,5 @@ comment5.target=void\ StudentsThreshold(java.lang.String[],\ java.lang.String[],
 comment6.params=names\ stuID\ totalMarks\ marksCount
 comment6.target=void\ Top5Students(java.lang.String[],\ java.lang.String[],\ float[],\ int[])
 comment7.params=students\ n
-comment7.target=void\ bubbleSort(StudentMarks.Student[],\ int)
+comment7.target=void\ bubbleSort(StudentMarksAssignment2.Student[],\ int)
 numComments=8

@@ -1,15 +1,14 @@
 /**
  * Write a description of class StudentMarks here.
  *
- * @author (your name)
+ * @author Gimhan Lakshitha
  * @version (a version number or a date)
  */
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class StudentMarks {
+public class StudentMarksAssignment2 {
     public static void main(String[] args) {
         
         //Create a Scanner object for user input
@@ -28,18 +27,17 @@ public class StudentMarks {
         String filePath;
         //Creating a loop until the correct path has been entered
         while (true) {
-            
         // Enter the file name
         System.out.print("Please enter the file name: ");
         filePath = inputScanner.nextLine().trim(); // Read and removing whitspace
         //Creating a if condition to check the file is exists
         if (new File(filePath).exists()) {
         break; // Exit the loop
-    } else {
+        } else {
         // Show invalid message 
         System.out.println("File not found! Please enter a valid file name.");
     }
-        }
+    }
 
 
         //Importing the text file
