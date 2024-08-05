@@ -38,20 +38,9 @@ public class StudentMarksAssignment2 {
         System.out.println("File not found! Please enter a valid file name.");
     }
     }
-
-
         //Importing the text file
         readDataFromFile(filePath, names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); // Calling method to read the file
-
-        //Checking the text document values are showing in the text document
-        /* for (int i = 0; i < names.length && names[i] != null; i++) {
-             System.out.println("Student ID: " + stuID[i]);
-             System.out.println("Student Name: " + names[i]);
-             System.out.println("Total Marks: " + totalMarks[i]);
-             System.out.println("Marks Count: " + marksCount[i]);
-             System.out.println();
-         }*/
-
+        
         //Menu choices
         while (true) {
             menu(); // Displaying the menu 
