@@ -32,6 +32,13 @@ public class StudentMarks {
         // Enter the file name
         System.out.print("Please enter the file name: ");
         filePath = inputScanner.nextLine().trim(); // Read and removing whitspace
+        //Creating a if condition to check the file is exists
+        if (new File(filePath).exists()) {
+        break; // Exit the loop
+    } else {
+        // Show invalid message 
+        System.out.println("File not found! Please enter a valid file name.");
+    }
         }
 
 
@@ -174,9 +181,6 @@ public class StudentMarks {
             }
             //Close the file scanner
             fileScanner.close();
-        } catch (FileNotFoundException e) {
-            //If the file is not detectable it will shows the error
-            System.out.println("File not found!");
         } catch (Exception e) { //Handling genaral issues when reading the file
 
             System.out.println("An error occurred while reading the file: " + e.getMessage());
