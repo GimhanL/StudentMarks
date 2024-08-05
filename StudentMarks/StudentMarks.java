@@ -11,6 +11,7 @@ import java.util.InputMismatchException;
 
 public class StudentMarks {
     public static void main(String[] args) {
+        
         //Create a Scanner object for user input
         Scanner inputScanner = new Scanner(System.in);
 
@@ -22,10 +23,11 @@ public class StudentMarks {
         float[] assignment1Marks = new float[100];
         float[] assignment2Marks = new float[100];
         float[] assignment3Marks = new float[100];
+        
+        //Declaring variable for file path
+        String filePath;
 
         //Importing the text file
-        String filePath = "prog5001_students_grade_2022.txt";
-
         readDataFromFile(filePath, names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); // Calling method to read the file
 
         //Checking the text document values are showing in the text document
