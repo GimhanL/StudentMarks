@@ -119,7 +119,7 @@ public class StudentMarks {
                         //Adding the marks
                         marksCount[index]++;
 
-                    } catch (NumberFormatException e) {
+                    } catch (NumberFormatException e) {//Validate numeric values
                         System.out.println("Skipping invalid mark for assignment 1: " + slots[3]); //Displaying error message
                     }
 
@@ -134,7 +134,7 @@ public class StudentMarks {
                         totalMarks[index] += assignment2Marks[index];
                         //Adding the marks
                         marksCount[index]++;
-                    } catch (NumberFormatException e) {
+                    } catch (NumberFormatException e) {//Validate numeric values
                         System.out.println("Skipping invalid mark for assignment 2: " + slots[4]); //Displaying error message
                     }
 
@@ -150,7 +150,7 @@ public class StudentMarks {
                         //Adding the marks
                         marksCount[index]++;
 
-                    } catch (NumberFormatException e) {
+                    } catch (NumberFormatException e) {//Validate numeric values
                         System.out.println("Skipping invalid mark for assignment 3: " + slots[5]); //Displaying error message
                     }
 
@@ -185,7 +185,7 @@ public class StudentMarks {
     private static void AllStudents(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float[] assignment1Marks, float[] assignment2Marks, float[] assignment3Marks) {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
-            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; // Calculating average marks for all students
+            float avgMark = marksCount[i] > 0 ? totalMarks[i] / marksCount[i] : 0; //If the marks exists, divide the total marks by number of marks and if there is no mark the value set to 0
             System.out.println("Student Name: " + names[i] + ", Student ID: " + stuID[i] + ", Assignment 1 marks: " + assignment1Marks[i] + ", Assignment 2 marks: " + assignment2Marks[i] + ", Assignment 3 marks: " + assignment3Marks[i] +
                 ", Total Marks: " + totalMarks[i] + ", Average Marks: " + avgMark);
 
