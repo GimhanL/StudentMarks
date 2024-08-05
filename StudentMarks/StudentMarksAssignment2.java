@@ -197,7 +197,7 @@ public class StudentMarksAssignment2 {
         System.out.println();
         System.out.print("Please write the number that you want to select? ");
     }
-    //Display all student with average marks
+    //Display all student with assignment marks and total marks with average marks
     private static void AllStudents(String[] names, String[] stuID, float[] totalMarks, int[] marksCount, float[] assignment1Marks, float[] assignment2Marks, float[] assignment3Marks) {
         System.out.println("\n_____________________Student list_____________________ ");
         for (int i = 0; i < names.length && names[i] != null; i++) { //Creating a loop to gets the list of student 
