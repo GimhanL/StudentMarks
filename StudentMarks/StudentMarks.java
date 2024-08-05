@@ -28,7 +28,12 @@ public class StudentMarks {
         String filePath;
         //Creating a loop until the correct path has been entered
         while (true) {
+            
+        // Enter the file name
+        System.out.print("Please enter the file name: ");
+        filePath = inputScanner.nextLine().trim(); // Read and removing whitspace
         }
+
 
         //Importing the text file
         readDataFromFile(filePath, names, stuID, totalMarks, marksCount, assignment1Marks, assignment2Marks, assignment3Marks); // Calling method to read the file
